@@ -20,6 +20,24 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Root welcome endpoint
+app.get('/', (req, res) => {
+  res.json({
+    app: 'Gemfinity Jewellery Savings App REST API',
+    status: 'online',
+    message: '✨ Welcome to Gemfinity Backend API',
+    endpoints: {
+      health: '/api/health',
+      auth: '/api/auth',
+      schemes: '/api/schemes',
+      payments: '/api/payments',
+      collections: '/api/collections',
+      rewards: '/api/rewards',
+      certificates: '/api/certificates'
+    }
+  });
+});
+
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
