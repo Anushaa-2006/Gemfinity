@@ -1,0 +1,184 @@
+:root {
+  /* Minimalist Champagne Gold & Slate Green Theme (Default Primary) */
+  --bg-canvas: #F4F7F6;
+  --bg-card: #FFFFFF;
+  --bg-card-border: #E5E9E8;
+  --primary-gold: #C5A059;
+  --champagne-gold: #D4AF37;
+  --metallic-gold: #B89343;
+  --gold-glow: rgba(197, 160, 89, 0.2);
+  --deep-slate-green: #1C3F3A;
+  --slate-green-light: #2D5A52;
+  --slate-green-glow: rgba(28, 63, 58, 0.08);
+  --text-main: #1C3F3A;
+  --text-muted: #64748B;
+  --accent-success: #10B981;
+  --header-font: 'Outfit', sans-serif;
+  --body-font: 'Outfit', sans-serif;
+}
+
+[data-theme="gold"] {
+  --bg-canvas: #080C16;
+  --bg-card: rgba(18, 25, 42, 0.85);
+  --bg-card-border: rgba(212, 175, 55, 0.3);
+  --primary-gold: #FFD700;
+  --champagne-gold: #FFD700;
+  --metallic-gold: #D4AF37;
+  --gold-glow: rgba(255, 215, 0, 0.25);
+  --deep-slate-green: #FAFAF5;
+  --slate-green-light: #94A3B8;
+  --text-main: #FAFAF5;
+  --text-muted: #94A3B8;
+}
+
+[data-theme="fintech"] {
+  --bg-canvas: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-card-border: #E2E8F0;
+  --primary-gold: #008080;
+  --champagne-gold: #0D9488;
+  --metallic-gold: #0F766E;
+  --gold-glow: rgba(0, 128, 128, 0.15);
+  --deep-slate-green: #0F172A;
+  --slate-green-light: #334155;
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-main);
+  font-family: var(--body-font);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+.slate-header-text {
+  color: var(--deep-slate-green);
+  font-family: var(--header-font);
+  font-weight: 700;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #C5A059 0%, #D4AF37 50%, #B89343 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* Neumorphic Soft Card Component */
+.neumorphic-card {
+  background: var(--bg-card);
+  border: 1px solid var(--bg-card-border);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 
+    8px 8px 20px rgba(28, 63, 58, 0.04),
+    -8px -8px 20px rgba(255, 255, 255, 0.8),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.neumorphic-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-gold);
+  box-shadow: 
+    12px 12px 28px rgba(28, 63, 58, 0.08),
+    -12px -12px 28px rgba(255, 255, 255, 1);
+}
+
+/* Soft Neumorphic Button */
+.gold-btn {
+  background: linear-gradient(135deg, #1C3F3A 0%, #2D5A52 100%);
+  color: #FFFFFF;
+  font-weight: 600;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px var(--slate-green-glow);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  letter-spacing: 0.3px;
+  font-size: 14px;
+}
+
+.gold-btn:hover {
+  background: linear-gradient(135deg, #15322E 0%, #1C3F3A 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(28, 63, 58, 0.2);
+}
+
+.gold-accent-btn {
+  background: linear-gradient(135deg, #D4AF37 0%, #C5A059 100%);
+  color: #1C3F3A;
+  font-weight: 700;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px var(--gold-glow);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gold-accent-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+}
+
+/* Mobile Frame Container */
+.mobile-frame {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--bg-canvas);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 40px rgba(28, 63, 58, 0.08);
+}
+
+/* Smooth Progress Bar Indicator */
+.progress-track {
+  width: 100%;
+  height: 10px;
+  background: #EAEFEF;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #C5A059 0%, #D4AF37 50%, #1C3F3A 100%);
+  border-radius: 6px;
+  transition: width 0.6s ease;
+}
+
+/* MFA Badge */
+.mfa-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(28, 63, 58, 0.06);
+  border: 1px solid rgba(28, 63, 58, 0.12);
+  color: #1C3F3A;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
